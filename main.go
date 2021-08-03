@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"log"
+
+	"github.com/adamlouis/gsg/internal/gen"
+)
 
 func main() {
-	fmt.Println("hello")
+	if err := gen.Gen(); err != nil {
+		log.Fatal(err)
+	}
 }

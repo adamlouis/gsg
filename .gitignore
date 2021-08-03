@@ -16,3 +16,10 @@
 
 bin/*
 !bin/.empty
+
+example/examplemodel/*
+example/exampleserver/*
+example/exampleclient/*
+!example/examplemodel/.empty
+!example/exampleserver/.empty
+!example/exampleclient/.empty
