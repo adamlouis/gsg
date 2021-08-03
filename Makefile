@@ -1,7 +1,7 @@
 
 clean:
-	rm ./bin/*
-	rm ./example/*/*
+	rm -f ./bin/*
+	rm -f ./example/*/*
 	go mod tidy
 
 build: clean
