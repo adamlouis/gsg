@@ -97,6 +97,7 @@ func Gen() error {
 			`"fmt"`,
 			`"net/http"`,
 			`"strconv"`,
+			`"reflect"`,
 			`"github.com/gorilla/mux"`,
 			fmt.Sprintf("\"%s\"", flagModelPackage),
 		})
@@ -577,7 +578,7 @@ func sendErrorWithCode(w http.ResponseWriter, code int, err error) {
 func sendOK(w http.ResponseWriter, body interface{}) {
 	w.Header().Add("Content-Type", "application/json")
 	code := http.StatusOK
-	if body == nil {
+	if reflect.ValueOf(body).IsNil() {
 		code = http.StatusNoContent
 	}
 	w.WriteHeader(code)
