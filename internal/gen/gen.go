@@ -481,7 +481,8 @@ func generateClientImpl(c *Config) string {
 		}
 		`
 
-		code += `req.Header.Set("Content-Type", "application/json")
+		code += `req.Close = true
+		req.Header.Set("Content-Type", "application/json")
 		resp, err := client.Do(req)
 		if err != nil {
 			` + route.getClientDefaultReturn("nil", "-1", "err") + `
