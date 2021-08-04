@@ -474,7 +474,7 @@ func generateClientImpl(c *Config) string {
 			`
 		}
 
-		code += `req, err := http.NewRequest(" + golangMethodByMethod[route.Method] + ", u.String(), requestBody)
+		code += `req, err := http.NewRequest(` + golangMethodByMethod[route.Method] + `, u.String(), requestBody)
 		if err != nil {
 			` + route.getClientDefaultReturn("nil", "-1", "err") + `
 		}
